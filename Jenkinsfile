@@ -17,5 +17,15 @@ pipeline {
                 build 'demo_1'
             }
         }
+        stage('cat README') {
+            when{
+                branch "Pratik-*"
+            }
+            steps {
+                bat'''
+                cat README.md
+                '''
+            }
+        }
     }
 }
